@@ -35,7 +35,6 @@ func main() {
     led.Configure(machine.PinConfig{Mode: machine.PinOutput})
     led.Low()
 
-    mymachine.SetRepeatedTimerAlarm("alarm0", mymachine.ALARM0, 4*1000*1000, alarm, 0, true)
     mymachine.SetRepeatedTimerAlarm("alarm1", mymachine.ALARM1, 1*1000*1000, alarm, 1, true)
     mymachine.SetRepeatedTimerAlarm("alarm2", mymachine.ALARM2, 0.05*1000*1000, ledToggle, 2)
     mymachine.SetOneshotTimerAlarm("alarm3", mymachine.ALARM3, 2*1000*1000, alarm, 3, true)
@@ -50,7 +49,6 @@ func main() {
         fmt.Printf("\r\n")
 
         if (loop == 10) {
-            mymachine.SetRepeatedTimerAlarm("alarm0", mymachine.ALARM0, 1*1000*1000, alarm, 4, true)
             mymachine.SetOneshotTimerAlarm("alarm1", mymachine.ALARM1, 5*1000*1000, alarm, 5, true)
             mymachine.SetRepeatedTimerAlarm("alarm2", mymachine.ALARM2, 0.1*1000*1000, ledToggle, 6)
             mymachine.SetRepeatedTimerAlarm("alarm3", mymachine.ALARM3, 3*1000*1000, alarm, 7, true)
