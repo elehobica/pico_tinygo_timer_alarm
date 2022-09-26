@@ -1,7 +1,7 @@
 # Raspberry Pi Pico TinyGo Timer Alarm
 ## Overview
 This project is a simple implementation of Timer/Alarm on Raspberry Pi Pico by TinyGo.
-* confirmed with TinyGo 0.22.0
+* confirmed with TinyGo 0.25.0
 
 This project features:
 * Repeated Timer Alarm
@@ -22,7 +22,7 @@ This project features:
 ```
 > wsl
 (in WSL2 shell)
-$ docker pull docker pull tinygo/tinygo
+$ docker pull tinygo/tinygo:0.25.0
 $ docker images
 $ docker run -it -v /mnt/d/somewhere/share:/share tinygo/tinygo:latest /bin/bash
 (in docker container)
@@ -42,7 +42,7 @@ $ docker run -it -v /mnt/d/somewhere/share:/share tinygo/tinygo:latest /bin/bash
 
 * TinyGo Build
 ```
-# tinygo build -target=pico -o pico_tinygo_timer_alarm.uf2
+# tinygo build -target=pico --serial uart -o pico_tinygo_timer_alarm.uf2
 
 (copy UF2 back to Windows local if working on docker native directory)
 (# cp pico_tinygo_timer_alarm.uf2 /share/pico_tinygo_timer_alarm/ )
